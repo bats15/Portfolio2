@@ -203,7 +203,7 @@ body{
     scale: 2;
     animation: autorotateAnimation 18s linear infinite;
     position: absolute;
-    top: -100%;
+    top: -107%;
     right: 20%;
     z-index: -3;
     filter: invert(1);
@@ -591,10 +591,10 @@ body{
     0%{
         filter: blur(20px);
     }
-    50%{
+    49%{
         filter: blur(0px);
     }
-    53%{
+    51%{
         filter: blur(0px);
     }
     100%{
