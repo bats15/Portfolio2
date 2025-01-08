@@ -351,7 +351,7 @@ body{
     height: 90vh;
     flex-direction: column;
     padding-top: 1em;
-
+    margin-bottom: 2em;
 }
 
 .projects h1{
@@ -518,7 +518,7 @@ body{
     align-items: center;
     flex-direction: column;
     padding-top: 1em;
-
+    margin-top: 2em;
 }
 
 
