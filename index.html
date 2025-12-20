@@ -3,130 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basit Warsi</title>
+    <title>Basit Warsi | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <favicon href="./img/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./img/favicon.ico" />
 </head>
 <body>
     <div class='btn'>
-        <img src="./img/lines.svg" alt="">
+        <img src="./img/lines.svg" alt="Menu">
     </div>
-    <div class="navd" id="navbar">
+    <nav class="navd" id="navbar">
         <a href="#home" class='nav-links'>Home</a>
         <a href="#education" class='nav-links'>Education</a>
         <a href="#projects" class='nav-links'>Projects</a>
-        <a href="#tech" class='nav-links'>Technologies and skills</a>
-        <a href="#socials" class='nav-links'>Socials</a>
-    </div>
+        <a href="#tech" class='nav-links'>Skills</a>
+        <a href="#socials" class='nav-links'>Contact</a>
+    </nav>
+    
     <div class="slider"></div>
-    <div class="container" id='home'>
-        <!-- <a href="/" id='namelogo'>BASIT</a> -->
-        <h1>Hi, I'm Basit Warsi</h1>
-        <h3 id='buildtext'>Let's build together</h3>
-        <p class='intropara'>I want to make some amazing stuff with amazing people.</p>
-        <p class='intropara'>(^///^)</p>
-        <!-- <img src="./img/gear1.svg" alt="Gear 1" id='biggergear' /> -->
+    
+    <section class="container" id='home'>
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">Basit Warsi</span></h1>
+            <h3 id='buildtext'>Let's build the future</h3>
+            <p class='intropara'>Computer Science Student at IIT Jammu. Passionate about AI, Machine Learning, and Full Stack Development.</p>
+        </div>
         <div class="gears">
-            <img src="./img/gear2.svg" alt="Gear 2" class='autorotate' />
+            <img src="./img/gear2.svg" alt="Gear" class='autorotate' />
         </div>
-    </div>
-    <div class="container2" id='education'>
-        <h1>Education</h1>
+    </section>
+
+    <section class="container2" id='education'>
+        <h1 class="section-title">Education</h1>
         <div class="cont2">
-        <div>
-        <p class='edupara'>
-            I am currently studying Computer Science at Indian Institute Of Technology, Jammu.
-        </p>
-        <p class="edupara">
-            I have a keen interest in Web Development and I am always looking for new opportunities to learn and grow.
-        </p>
+            <div class="edu-details">
+                <div class="edu-card">
+                    <h2>B.Tech in Computer Science & Engineering</h2>
+                    <h3>Indian Institute of Technology, Jammu</h3>
+                    <p class="year">2024 - 2028</p>
+                    <p class="grade">CGPA: 7.57 (Current)</p>
+                </div>
+                <div class="edu-card">
+                    <h2>12th Standard</h2>
+                    <h3>CBSE</h3>
+                    <p class="year">2023</p>
+                    <p class="grade">Percentage: 87.4%</p>
+                </div>
+            </div>
+            <div class="edu-image">
+                <img src="./img/slider3.jpg" alt="Education" />
+            </div>
         </div>
-        <img src="./img/slider3.jpg" alt="" />
-        </div>
-    </div>
-    <div class="projects" id='projects'>
-        <h1>Projects</h1>
-        <p id='projectpara'>Although I am a new developer, I have worked on some basic individual projects and participate in the development of some very compelling and mind-boggling websites.</p>
-        <label htmlFor=".cards">----Hover here----</label>
+    </section>
+
+    <section class="projects" id='projects'>
+        <h1 class="section-title">Projects</h1>
+        <p id='projectpara'>A showcase of my work in AI/ML, Web Development, and Software Engineering.</p>
+        <label htmlFor=".cards" class="hover-instruction">---- Hover over cards to explore ----</label>
+        
         <div class="cards">
+            <!-- Project 1 -->
             <div class="card">
-                <h3>Dictionary App</h3>
-                <p>
-                    An app that helps you find the meaning of the word you are looking for using a free API.
-                </p>
-                <a href="https://dict-henna.vercel.app/" target='blank'><button class="visit">Visit</button></a>
+                <h3>NLP Models Implementation</h3>
+                <p class="tech-stack">Python, NLTK, SpaCy</p>
+                <p>Built core NLP models from scratch including N-gram language models and Named Entity Recognition pipelines.</p>
             </div>
+
+            <!-- Project 2 -->
             <div class="card">
-                <h3>Joke Generator</h3>
-                <p>
-                    A simple app that generates a random joke every time you click on the button.
-                    I am trying to make it more interactive and user-friendly by.
-                </p>
-                <a href="https://joke-gen-xi.vercel.app/" target='blank'><button class="visit">Visit</button></a>
+                <h3>RL with PPO (Gymnasium)</h3>
+                <p class="tech-stack">Python, PyTorch, Stable-Baselines3</p>
+                <p>Trained reinforcement learning agents on classic control and visual environments using policy-gradient methods.</p>
             </div>
+
+            <!-- Project 3 -->
             <div class="card">
-                <h3>Recipe Finder</h3>
-                <p>
-                    An app that helps you find the recipe of the dish you are looking for using a free API.
-                </p>
-                <a href="https://recipe-blue-alpha.vercel.app/" target='blank'><button class="visit">Visit</button></a>
+                <h3>Clip Extractor App</h3>
+                <p class="tech-stack">Mediapipe, OpenCV, Python</p>
+                <p>Automated tool to extract and process video clips from longer footage with face/pose tracking.</p>
             </div>
+
+            <!-- Project 5 -->
             <div class="card">
-                <h3>Blackjack Game</h3>
-                <p>
-                    A simple website to play blackjack with the computer in numeric form.
-                </p>
-                <a href="https://blackjack-livid.vercel.app/" target='blank'><button class="visit">Visit</button></a>
+                <h3>Crypto Trading Bot</h3>
+                <p class="tech-stack">Python, PyTorch, LSTM</p>
+                <p>CLI cryptocurrency trading system using deep learning for price prediction and strategy execution.</p>
             </div>
+
+            <!-- Project 6 -->
             <div class="card">
-                <h3>Udyamitsav '24</h3>
-                <p>
-                    An official website for the annual fest of IIT Jammu.
-                    This Website was created by me and my team.
-                    This website is compleated but not launched yet.
-                </p>
+                <h3>ML Three-Body Problem</h3>
+                <p class="tech-stack">Python, PINN, PINO</p>
+                <p>Data-driven modeling of chaotic dynamical systems using Physics-Informed Neural Networks.</p>
             </div>
-            <div class="card">
-                <h3>Video Havetica</h3>
-                <p>
-                    A project that generates a Short form video using a long video input and highlighted text input.
-                    This is an ongoing project and not launched yet.
-                </p>
+
+        </div>
+    </section>
+
+    <section class="languages" id="tech">
+        <h1 class='langheading section-title'>Technical Skills</h1>
+        
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Languages</h3>
+                <p>C/C++, Python, JavaScript</p>
             </div>
-            <div class="card">
-                <h3>Project Mitnick</h3>
-                <p>
-                    A project that scans your website for vulnerabilities and gives you a report on how to fix them.
-                    This is an ongoing project and not launched yet.
-                </p>
+            <div class="skill-category">
+                <h3>Web Development</h3>
+                <p>React.js, Next.js, Node.js, Express.js, HTML, CSS, MongoDB</p>
+            </div>
+            <div class="skill-category">
+                <h3>AI / ML</h3>
+                <p>PyTorch, TensorFlow, Scikit-learn, Pandas, NumPy, OpenCV, Gymnasium</p>
+            </div>
+            <div class="skill-category">
+                <h3>Tools & Platforms</h3>
+                <p>Git, Linux, Docker, Vercel, Jupyter</p>
             </div>
         </div>
-    </div>
-    <div class="languages" id="tech">
-        <h1 class='langheading'>
-            Technologies and skills
-        </h1>
-        <p>
-            Although I am learning something new every day and I am not perfect at anything, these are some technologies I have a good grip over.
-        </p>
-        <div class="lang-container">
-            <div class="lang"><img src="./img/next.svg" alt="" /><h1>NextJs</h1></div>
-            <div class="lang"><img src="./img/js.svg" alt="" /><h1>Js</h1></div>
-            <div class="lang"><img src="./img/html.svg" alt="" /><h1>  </h1></div>
-            <div class="lang"><img src="./img/css.svg" alt="" /><h1> </h1></div>
-            <div class="lang"><img src="./img/react.svg" alt="" /><h1>React</h1></div>
-            <div class="lang"><img src="./img/python.svg" alt="" /><h1>Python</h1></div>
-        </div>
-    </div>
-    <div class="socials" id='socials'>
-        <h1>Find me on</h1>
+    </section>
+
+    <section class="socials" id='socials'>
+        <h1 class="section-title">Get In Touch</h1>
         <div class="social-icons">
-            <div class="sicon"><a href="https://www.linkedin.com/in/basit-warsi-b4501a313/" target='blank'><img src="./img/linkd.svg" alt="" class='firstsocial' /></a></div>
-            <div class="sicon"><a href="https://www.instagram.com/m_basit_w/" target='blank'><img src="./img/insta.svg" alt="" class='secondSocial'/></a></div>
-            <div class="sicon"><a href="https://github.com/bats15" target='blank'><img src="./img/github.svg" alt="" class='firstsocial'/></a></div>
-            <div class="sicon"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=basitwarsi2595@gmail.com" target='blank'><img src="./img/gmail.svg" alt="" class='secondSocial'/></a></div>
+            <div class="sicon"><a href="https://www.linkedin.com/in/basitwarsi" target='_blank'><img src="./img/linkd.svg" alt="LinkedIn" class='firstsocial' /></a></div>
+            <div class="sicon"><a href="https://github.com/bats15" target='_blank'><img src="./img/github.svg" alt="GitHub" class='secondSocial'/></a></div>
+            <div class="sicon"><a href="mailto:basitwarsi2595@gmail.com" target='_blank'><img src="./img/gmail.svg" alt="Email" class='firstsocial'/></a></div>
         </div>
-    </div>
+        <footer class="footer">
+            <p>&copy; 2025 Basit Warsi. Built with code.</p>
+        </footer>
+    </section>
 
     <script src="script.js"></script>
 </body>

@@ -1,20 +1,57 @@
-const toggle = document.querySelector('.btn');
-const navbar = document.querySelector('.navd');
+document.addEventListener('DOMContentLoaded', () => {
+    // Navigation Toggle
+    const toggle = document.querySelector('.btn');
+    const navbar = document.querySelector('.navd');
+    let isNavOpen = false;
 
-let t = 0;
-toggle.addEventListener('click', () => {
-  if (t==0) {
-    navbar.style.transform = 'translateX(0)';
-    t=1;
-    toggle.style.filter = 'invert(0)';
-    toggle.style.transform = 'translateX(-16vw)';
-  } else {
-    navbar.style.transform = 'translateX(20vw)';
-    t=0
-    toggle.style.filter = 'invert(1)';
-    toggle.style.transform = 'translateX(0)';
-  }
+    toggle.addEventListener('click', () => {
+        isNavOpen = !isNavOpen;
+        if (isNavOpen) {
+            navbar.classList.add('active');
+            toggle.style.filter = 'invert(0)';
+        } else {
+            navbar.classList.remove('active');
+            toggle.style.filter = 'invert(1)';
+        }
+    });
 
-  console.log(t)
-  console.log('clicked');
+    // Close nav when clicking a link
+    document.querySelectorAll('.nav-links').forEach(link => {
+        link.addEventListener('click', () => {
+            isNavOpen = false;
+            navbar.classList.remove('active');
+            toggle.style.filter = 'invert(1)';
+        });
+    });
+
+    // Intersection Observer for Animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    // Elements to observe
+    const animatedElements = document.querySelectorAll(
+        '.section-title, .edu-card, .edu-image, .skill-category'
+    );
+
+    animatedElements.forEach(el => observer.observe(el));
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
 });
