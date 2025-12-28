@@ -55,3 +55,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+document.querySelector('.morelink').addEventListener('click', function(e) {
+    e.preventDefault();
+    const href = this.getAttribute('href');
+    setTimeout(() => {
+        window.open(href, '_blank');
+    }, 1100);
+});
+
+document.querySelectorAll('.viewmorebtn').forEach(button => {
+    button.addEventListener('click', function() {
+        const clickSound = new Audio('./img/click4.mp3');
+        clickSound.volume = 0.8; // Adjust volume (0.0 to 1.0)
+        clickSound.play();
+    });
+});

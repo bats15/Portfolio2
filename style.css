@@ -326,11 +326,13 @@ section {
 .cards {
     border: 1px solid rgba(255,255,255,0.2);
     width: 100%;
+    max-width: 1400px;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 20px;
-    padding: 3rem 1rem;
+    padding: 3rem 3rem; /* Increased horizontal padding */
+    margin: 0 auto; /* Center the container */
     transform-style: preserve-3d;
     transform: perspective(1000px);
     border-radius: 20px;
@@ -340,9 +342,9 @@ section {
 .card {
     border: none;
     margin: 0;
-    width: 240px; /* Fixed width for better layout */
-    min-width: 200px;
-    height: 350px; /* Fixed height */
+    width: 240px;
+    min-width: 240px;
+    height: 350px;
     text-align: left;
     background-color: var(--card-bg);
     color: var(--card-text);
@@ -353,7 +355,7 @@ section {
     display: flex;
     flex-direction: column;
     position: relative;
-    flex-shrink: 0; /* Prevent shrinking */
+    flex-shrink: 0;
 }
 
 /* CRITICAL HOVER EFFECTS */
@@ -363,12 +365,12 @@ section {
 }
 
 .card:hover + *{
-    transform: translateZ(50px) rotateY(30deg);
+    transform: translateZ(30px) rotateY(30deg);
     filter: brightness(0.3);
 }
 .card:hover + * + *{
     transform: translateZ(0px) rotateY(10deg);
-    filter: brightness(0.1);
+    filter: brightness(0.08);
 }
 
 .card:has(+ *:hover){
@@ -378,7 +380,7 @@ section {
 
 .card:has(+ * + *:hover){
     transform: translateZ(0px) rotateY(-10deg);
-    filter: brightness(0.1);
+    filter: brightness(0.08);
 }
 
 /* Card Content Styling */
@@ -496,9 +498,9 @@ section {
     transform: scale(1.2);
 }
 
-.sicon:hover img {
+/* .sicon:hover img {
     filter: invert(0.5) sepia(1) saturate(5) hue-rotate(190deg);
-}
+} */
 
 .footer {
     margin-top: auto;
@@ -525,4 +527,177 @@ section {
     .card { width: 100%; }
     .navd { width: 100%; }
     .gears { display: none; }
+}
+
+
+
+.card a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.card a button{
+    display: flex;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 0.2rem 1rem;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: 0.25s;
+    width: 100%;
+    border: 3px solid transparent;
+}
+
+.card a button img{
+    width: 40px;
+    height: 40px;
+    filter: invert(1);
+    margin-right: 8px;
+    transition: 0.25s;
+}
+
+.card a button:hover {
+    background-color: white;
+    color: black;
+    border: 3px solid black;
+}
+
+.card a button:hover img{
+    filter: invert(0);
+}
+
+
+.more_proj{
+    margin-top: 2rem;
+    font-family: monospace;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    padding: 0.2rem 0.3rem;
+    border-radius: 6px;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+
+}
+
+.more_proj p{
+    /* border: 1px solid var(--accent-color); */
+    padding: 0.5em;
+    margin-bottom: 0.5rem;
+    font-size: 0.8em;
+}
+
+.viewmorebtn{
+    position: relative;
+    width: 150px;
+    height: 50px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    perspective: 600px;
+}
+
+.top{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    font-family:var(--font-mono);
+    font-size: 1.5em;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    outline: 2px solid black;
+    box-sizing: border-box;
+    transition: 0.2s;
+    overflow: hidden;
+    transition-delay: 0.05s;
+}
+
+
+.bottom{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(150, 150, 150);
+    font-family:var(--font-mono);
+    font-size: 1.5em;
+    color: black;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+    border-radius: 25px;
+    outline: 2px solid black;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    z-index: -1;
+}
+
+.bottom::after{
+    content: "";
+    width: 2px;
+    height: 9px;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: 85%
+}
+
+.bottom::before{
+    content: "";
+    width: 2px;
+    height: 9px;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: 15%
+}
+
+.viewmorebtn::before{
+    content: "";
+    width: calc(100% + 2px);
+    height: 100%;
+    background-color: rgb(171, 171, 171);
+    border-radius: 20px;
+    outline: 2px solid black;
+    position: absolute;
+    top: 14px;
+    left: -1px;
+    z-index: -2;
+}
+
+.viewmorebtn:active .top{
+    transform: translateY(10px);
+}
+
+.top::before{
+    content: "";
+    width: 15px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.27);
+    transform: skewX(30deg);
+    transition: 0.25s;
+    position: absolute;
+    left: -20px;
+
+}
+
+.viewmorebtn:active .top::before{
+    left: calc(100% + 20px);
+}
+
+.contact-subtext{
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--accent-color);
+    margin-top: 1rem;
 }
